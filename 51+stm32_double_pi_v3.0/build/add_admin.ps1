@@ -1,0 +1,1 @@
+wsl sed -i 's/void toLoginTask(lv_event_t \* e)/static int admin_logged_in = 0;\nvoid toLoginTask(lv_event_t * e)/' /home/huangsimin09/lv_port_linux_sdl_gec6818/ui/ui_events.c && echo done

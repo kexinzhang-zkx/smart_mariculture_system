@@ -1,0 +1,10 @@
+f='/home/huangsimin09/lv_port_linux_sdl_gec6818/ui/screens/ui_Screen4.c'
+c=open(f).read()
+c=c.replace('"/\u6e29\u5ea6 (1).png"','&ui_img_sensor_temp')
+c=c.replace('"/\u6e7f\u5ea6.png"','&ui_img_sensor_humi')
+c=c.replace('"/\u5149\u7167.png"','&ui_img_sensor_light')
+c=c.replace('"/PH\u503c.png"','&ui_img_sensor_ph')
+c=c.replace('"/\u6eb6\u89e3\u6c27.png"','&ui_img_sensor_do')
+c=c.replace('"/\u6d4a\u5ea6.png"','&ui_img_sensor_turb')
+open(f,'w').write(c)
+print('done')
