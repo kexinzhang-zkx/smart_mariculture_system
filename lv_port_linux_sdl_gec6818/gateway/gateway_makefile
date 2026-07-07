@@ -1,0 +1,33 @@
+# ================================================================
+#  gateway_makefile — GEC6818 Gateway 编译脚本
+#  用法: make -f gateway_makefile
+# ================================================================
+
+CC      = arm-linux-gcc
+CFLAGS  = -O2 -Wall -I. -finput-charset=UTF-8 -fexec-charset=UTF-8
+LDFLAGS = -lpthread -lm
+TARGET  = gateway
+
+SRCS = gateway.c \
+       serial_handler.c \
+       data_processor.c \
+       mqtt_manager.c
+
+OBJS = $(SRCS:.c=.o)
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) -o $@ $^ $(LDFLAGS)
+	@echo "[OK] $(TARGET) built"
+
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+send:
+	scp $(TARGET) root@192.168.29.2:/
+
+.PHONY: all clean send
