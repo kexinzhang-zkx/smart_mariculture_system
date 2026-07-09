@@ -1,0 +1,20 @@
+SET(SOURCES screens/ui_Screen1.c
+    screens/ui_Screen7.c
+    screens/ui_Screen4.c
+    screens/ui_Screen5.c
+    screens/ui_Screen6.c
+    screens/ui_Screen2.c
+    ui.c
+    components/ui_comp_hook.c
+    ui_helpers.c
+    ui_events.c
+    images/ui_img_login_png.c
+    images/ui_img_screen9_png.c
+    images/ui_img_13_png.c
+    images/ui_img_2_png.c
+    images/ui_img_170934617.c
+    images/ui_img_1168434321.c
+    images/ui_img_760332301.c
+    fonts/ui_font_chinese28.c)
+
+add_library(ui ${SOURCES})
